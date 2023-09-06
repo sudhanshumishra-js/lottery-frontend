@@ -1,16 +1,23 @@
+"use-client";
+
+// type lotteryProps = {
+//   name: string;
+//   data: string;
+// };
+
 import React, { forwardRef } from "react";
+import { types } from "util";
 import { useAccount } from "wagmi";
 
-const Lottery = forwardRef<HTMLDivElement>((props, ref) => {
+const Lottery = () => {
   const { address, isConnected } = useAccount();
   return (
     <>
-      <div ref={ref}>
-        To use the project I have deployed it on Sepolia Testnet.
+      <div>
         {!isConnected ? <span>Please Connect wallet to continue.</span> : null}
       </div>
     </>
   );
-});
+};
 
 export default Lottery;
