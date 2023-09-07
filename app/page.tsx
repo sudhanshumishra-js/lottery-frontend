@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <main>
       <div className="min-h-screen">
-        <h1 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl my-10 font-mono">
+        <h1 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl my-10 font-mono bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent">
           Smart Contract Lottery
         </h1>
         <article className="text-center break-words  sm:text-lg md:text-xl lg:text-2xl xl text-3xl font-extralight ">
@@ -24,8 +24,8 @@ export default function Home() {
           your side!
         </article>
 
-        <article className="font-bolder text-orange-600 mt-10 text-center mx-auto">
-          [ Note: The contract is deployed on Sepolia Testnet. Use{" "}
+        <article className="font-bolder text-black mt-10 text-center mx-auto">
+          [ The contract is deployed on Sepolia Testnet. Use{" "}
           <a
             href="https://sepoliafaucet.com/"
             rel="noopener noreferrer"
@@ -46,7 +46,7 @@ export default function Home() {
         <Image
           src={scrollIcon}
           alt="scroll_icon"
-          className="text-center mx-auto "
+          className="text-center mx-auto animate-bounce"
         ></Image>
       </div>
       <div ref={lotteryDivRef}>
