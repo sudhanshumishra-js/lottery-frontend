@@ -4,6 +4,8 @@ import Image from "next/image";
 import scrollIcon from "../public/scrollIcon.png";
 import React from "react";
 import ClientOnly from "@/components/ClientOnly/ClientOnly";
+import toaster from "toastify-react";
+
 export default function Home() {
   const lotteryDivRef = React.useRef<HTMLDivElement | null>(null);
   const handlePlayNowButton = () => {
@@ -14,10 +16,10 @@ export default function Home() {
   return (
     <main>
       <div className="min-h-screen">
-        <h1 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl my-10 font-mono bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent">
+        <h1 className="text-center text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl my-10 font-mono bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-transparent">
           Smart Contract Lottery
         </h1>
-        <article className="text-center break-words  sm:text-lg md:text-xl lg:text-2xl xl text-3xl font-extralight ">
+        <article className="text-center break-words  sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-xl font-extralight ">
           Join our blockchain-powered lottery where you can see real-time
           participant count and a live countdown to the draw. Choose to play on
           either the Sepolia Testnet or the Mainnet. Dive in, and may luck be on

@@ -42,7 +42,7 @@ export default function RootLayout({
         <WagmiConfig config={wagmiConfig}>
           <RainbowKitProvider chains={chains}>
             {/* <div className="bg-gradient-to-r from-rose-100 to-teal-100 h-screen w-screen"> */}
-            <div className="px-10  max-w-screen-2xl mx-auto max-xl:px-15 max-md:px-10 max-sm:px-8 px-05">
+            <div className="px-10  max-w-screen-2xl mx-auto max-xl:px-15 max-md:px-10 max-sm:px-2 px-05">
               <Header />
               {children}
             </div>
