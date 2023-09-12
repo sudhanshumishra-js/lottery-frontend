@@ -6,6 +6,7 @@ import {
   initContract,
 } from "@/web3/web3helpers";
 import { ethers } from "ethers";
+
 // import { ToastContainer, toast } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
 import React, { Suspense, forwardRef, useEffect } from "react";
@@ -80,7 +81,10 @@ const Lottery = () => {
 
   const handleEnterRaffle = async () => {
     setIsTxProcessing(true);
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const provider = new ethers.providers.Web3Provider(
+      (window as any).ethereum
+    );
+
     const signer = provider.getSigner();
 
     try {
