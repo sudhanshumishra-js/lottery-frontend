@@ -113,34 +113,69 @@ const Lottery = () => {
         <ToastContainer autoClose={5000} />
         <div className="w-full sm:w-full md:w-4/5  lg:w-3/4 xl:w-3/4 mx-auto overflow-hidden break-words px-3 py-3 sm:px-4 sm:py-4 md:px-5 md:py-5 lg:px-6 lg:py-6 xl:px-10 xl:py-10 backdrop-blur-sm bg-white/50 rounded-xl mb-20">
           <div className="flex justify-center items-center gap-10">
-            <button
-              type="button"
-              className="relative text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 border-2 border-black"
-              onClick={handleEnterRaffle}
-            >
-              {isTxProcessing ? (
-                <div className="flex items-center justify-center space-x-2 w-full">
-                  <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
-                    <circle
-                      className="opacity-25"
-                      cx="12"
-                      cy="12"
-                      r="10"
-                      stroke="black"
-                      strokeWidth="2"
-                    ></circle>
-                    <path
-                      className="opacity-75"
-                      fill="black"
-                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                    ></path>
-                  </svg>
-                  <span>Processing</span>
-                </div>
-              ) : (
-                "Enter Lottery"
-              )}
-            </button>
+            {!address ? (
+              <button
+                type="button"
+                className="relative text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 border-2 border-black"
+                onClick={() =>
+                  toast.error("Connect Wallet!", {
+                    position: toast.POSITION.TOP_RIGHT,
+                  })
+                }
+              >
+                {isTxProcessing ? (
+                  <div className="flex items-center justify-center space-x-2 w-full">
+                    <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="black"
+                        strokeWidth="2"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="black"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                      ></path>
+                    </svg>
+                    <span>Processing</span>
+                  </div>
+                ) : (
+                  "Enter Lottery"
+                )}
+              </button>
+            ) : (
+              <button
+                type="button"
+                className="relative text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 border-2 border-black"
+                onClick={handleEnterRaffle}
+              >
+                {isTxProcessing ? (
+                  <div className="flex items-center justify-center space-x-2 w-full">
+                    <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="black"
+                        strokeWidth="2"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="black"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                      ></path>
+                    </svg>
+                    <span>Processing</span>
+                  </div>
+                ) : (
+                  "Enter Lottery"
+                )}
+              </button>
+            )}
           </div>
 
           <div className="mt-10 mb-10">
